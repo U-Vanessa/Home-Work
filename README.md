@@ -37,10 +37,13 @@ No installation is required. Simply download the files and open index.html in yo
 Execute the script using the following command:
 
   1.Clone the repository
+  
   git clone https://github.com/U-Vanessa/Home-Work.git
   
   2. Navigate to the directory
+     
   cd Home-Work/
+
 
 # Author
 # Vanessa UWONKUNDA
