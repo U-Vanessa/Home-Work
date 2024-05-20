@@ -1,5 +1,3 @@
-# Home-Work
-
 # UNIQUE INTEGER PROCESSOR
 
 # Description
