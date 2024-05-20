@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #948f8fa2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: rgb(92, 89, 89);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(112, 112, 112, 0.1);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+input[type="file"] {
+    margin-bottom: 20px;
+}
+
+input type{
+    background: rgba(27, 27, 197, 0.534);
+}
+
+button {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 13px;
+    cursor: pointer;
+    background: rgba(53, 53, 235, 0.849);
+}
+
+textarea {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+}
