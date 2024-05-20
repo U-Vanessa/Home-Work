@@ -32,3 +32,15 @@ No installation is required. Simply download the files and open index.html in yo
 - Index.html: The HTML file that sets up the structure of the web page.
 - Styles.css: The CSS file that styles the web page.
 - Script.js: The JavaScript file that handles the logic for reading, processing, and displaying the integers.
+
+#Running the Script
+Execute the script using the following command:
+
+  1.Clone the repository
+  git clone https://github.com/U-Vanessa/Home-Work.git
+  
+  2. Navigate to the directory
+  cd Home-Work/
+
+# Author
+# Vanessa UWONKUNDA
