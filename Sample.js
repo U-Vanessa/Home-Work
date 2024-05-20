@@ -28,8 +28,8 @@ class UniqueInt {
                             this.seen[number - this.minInt] = true;
                             uniqueNumbers.push(number);
                         }
-                    } else {                                      // This will occur when the integer entered is not in the range given
-                        console.log(`Number out of range: ${number}`);
+                    } else {
+                        console.log(`Number out of range: ${number}`);  // This will be called when the integer intered is not in the range
                     }
                 } else {
                     console.log(`Invalid integer line: ${strippedLine}`);
@@ -60,6 +60,8 @@ class UniqueInt {
 function processFile() {
     const fileInput = document.getElementById('fileInput');
     const outputArea = document.getElementById('output');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const timeTakenElem = document.getElementById('timeTaken');
     const file = fileInput.files[0];
 
     if (!file) {
@@ -71,9 +73,39 @@ function processFile() {
     reader.onload = function(event) {
         const fileContent = event.target.result;
         const uniqueIntProcessor = new UniqueInt();
+        
+        // Timing the processing
+        const startTime = performance.now();
         const result = uniqueIntProcessor.processFile(fileContent);
+        const endTime = performance.now();
+        
+        // Displaying the result
         outputArea.value = result;
+
+        // Displaying the download button
+        downloadBtn.style.display = 'inline-block';
+
+        // Calculating and displaying the time taken
+        const timeTaken = (endTime - startTime).toFixed(4);
+        timeTakenElem.textContent = `Processed in ${timeTaken} milliseconds`;
+
+        // Storing the result for download
+        downloadBtn.dataset.result = result;
     };
 
     reader.readAsText(file);
+}
+
+function downloadFile() {
+    const downloadBtn = document.getElementById('downloadBtn');
+    const result = downloadBtn.dataset.result;
+    const blob = new Blob([result], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'results.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
 }
